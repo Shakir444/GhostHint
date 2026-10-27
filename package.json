@@ -6,6 +6,7 @@
   "workspaces": ["client", "server"],
   "scripts": {
     "dev": "concurrently -k -n SERVER,CLIENT -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "prebuild": "npm install --include=dev",
     "build": "npm run build -w client",
     "start": "npm run start -w server",
     "check": "npm run check -w server && npm run build -w client"
