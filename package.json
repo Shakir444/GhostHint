@@ -1,0 +1,17 @@
+{
+  "name": "ghosthint-multiplayer-game",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A real-time multiplayer word and picture guessing game with accounts, guest play, rooms, chat, voice and video.",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -k -n SERVER,CLIENT -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "check": "npm run check -w server && npm run build -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": { "node": ">=20.0.0" }
+}
